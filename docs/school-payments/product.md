@@ -1,4 +1,4 @@
-# Product plan: kindo-payments
+# Product plan: school-payments
 
 ## Maturity
 lowest: 👤 human-ok
@@ -90,7 +90,6 @@ Web, responsive: mobile-first with `sm:`/`md:` breakpoints, one page.
 ## decisions
 👤 human-ok
 
-- **Plan over brief:** the Kindo School Payments Implementation Plan always wins over `Tech_Challenge.md`. Why: the plan is settled.
 - **Build from the impl doc:** during the build, follow the `plan-impl` doc. Where it would violate the Implementation Plan, the Implementation Plan wins.
 - **Registration and payment are separate steps:** an unpaid registration stays `registered` with no expiry. Why: first round, make it work first.
 - **One parent per student:** `student.parent_id`. Why: first round, make it work first.

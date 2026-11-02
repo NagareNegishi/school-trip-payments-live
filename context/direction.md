@@ -10,19 +10,19 @@ durable part. Verify status against `docs/progress.md`, `docs/plans/`, and issue
 Near-term, roughly in queue order:
 
 - Browser check of the running app, run by the user -> `docs/plans/manual-check.md`
-- Merge `feat/school-trip-payments` to `main` -> `docs/kindo-payments/impl.md`
-- Deploy to Render by hand from the dashboard, then add the live URLs to the README -> `docs/kindo-payments/render-deploy.md`
+- Merge `feat/school-trip-payments` to `main` -> `docs/school-payments/impl.md`
+- Deploy to Render by hand from the dashboard, then add the live URLs to the README -> `docs/school-payments/render-deploy.md`
 
 ## Deferred but real
 
-- Render setup: not done; the repo side of Step 10 is closed -> `docs/kindo-payments/impl.md`
+- Render setup: not done; the repo side of Step 10 is closed -> `docs/school-payments/impl.md`
 - A seeded trip date is set once, 30 days after the first start; a database kept longer has no upcoming trip -> `README.md`
 - No reconciliation if the processor approves and the database commit then fails -> `README.md`
 
 ## Deliberately deferred (why)
 
-- Login: a header dropdown stands in, to keep the first round small -> `docs/kindo-payments/product.md`
-- Registration expiry, cancellation and refunds: out of the first round -> `docs/kindo-payments/product.md`
+- Login: a header dropdown stands in, to keep the first round small -> `docs/school-payments/product.md`
+- Registration expiry, cancellation and refunds: out of the first round -> `docs/school-payments/product.md`
 - Many schools: one school for now, so a new child goes to the lowest-numbered school -> `backend/app/routers/parents.py`
 
 ## Not in scope for the product
@@ -32,7 +32,7 @@ Near-term, roughly in queue order:
 
 ## Where the live plans are
 
-- `docs/kindo-payments/` = the plan docs for this app: product, implementation plan, impl steps, deploy guide -> `docs/kindo-payments/`
+- `docs/school-payments/` = the plan docs for this app: product, implementation plan, impl steps, deploy guide -> `docs/school-payments/`
 - `docs/plans/` = per-feature plan files; only the manual check lives there now -> `docs/plans/`
 - This file indexes the live plans; it does not replace them.
 

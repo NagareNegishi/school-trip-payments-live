@@ -66,7 +66,7 @@ Each interface between parts and to the outside.
 ## Infra
 
 - Dev container with Postgres as a second service and an outbound firewall -> `.devcontainer/`
-- Deploy target is Render, set up by hand from the dashboard; not done yet -> `docs/kindo-payments/render-deploy.md`
+- Deploy target is Render, set up by hand from the dashboard; not done yet -> `docs/school-payments/render-deploy.md`
 
 ## Weak or missing seams
 

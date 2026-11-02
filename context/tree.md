@@ -79,7 +79,7 @@ backend/
 │   ├── legacy/
 │   │   ├── __init__.py   empty package marker
 │   │   ├── adapter.py    the only caller of the legacy processor: converts our values to the types it expects and runs it off the event loop
-│   │   └── processor.py  the legacy payment processor from the brief, unchanged
+│   │   └── processor.py  the legacy payment processor, unchanged
 │   ├── models/
 │   │   ├── __init__.py         imports every model so all tables register on the shared metadata
 │   │   ├── activity.py         activity table (the trip), money in integer cents
@@ -433,15 +433,12 @@ docs/
 │   ├── v2-fetch-origin-main.md  v1 plus the exact command git fetch origin main allowed silently; every other fetch form hard-denied by the fetch-guard.sh hook
 │   ├── v3-no-coauthor.md       v2 permissions unchanged; the coauthor-guard.sh hook denies any command carrying a Co-Authored-By trailer or the Claude author identity
 │   └── v4-gh-allowlist.md      opens the GitHub CLI for the first time: eleven gh forms allowed silently, everything else hard-denied by the gh-guard.sh hook
-├── kindo-payments/
-│   ├── Kindo School Payments – Implementation Plan.md  the source of truth for scope, data model, API, validation, tests and build order
-│   ├── impl.md                                         the step-by-step build plan with a status table, one section per step
-│   ├── legacy_payment.py                               the legacy payment processor source from the brief
-│   ├── product.md                                      the product plan: what the app does and why
-│   ├── render-deploy.md                                verified dashboard steps for deploying to Render, with open gaps
-│   ├── school_payments_eer_diagram.svg                 data model diagram
-│   ├── Tech Challenge.pdf                              the original brief as a PDF; NOT READ (binary)
-│   └── Tech_Challenge.md                               the original brief as text
+├── school-payments/
+│   ├── School Payments - Implementation Plan.md  the source of truth for scope, data model, API, validation, tests and build order
+│   ├── impl.md                                   the step-by-step build plan with a status table, one section per step
+│   ├── product.md                                the product plan: what the app does and why
+│   ├── render-deploy.md                          verified dashboard steps for deploying to Render, with open gaps
+│   └── school_payments_eer_diagram.svg           data model diagram
 ├── plans/
 │   ├── .gitkeep          keeps docs/plans/ tracked when empty of files
 │   └── manual-check.md   browser checklist for the running app, what was checked at API level, and what is left

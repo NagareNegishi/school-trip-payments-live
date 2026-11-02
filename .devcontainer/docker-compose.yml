@@ -1,5 +1,5 @@
 # Pins the Compose project name so container, image and volume names don't follow the folder name
-name: kindo
+name: school-trips
 
 services:
   app:

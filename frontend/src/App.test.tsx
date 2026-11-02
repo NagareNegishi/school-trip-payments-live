@@ -27,7 +27,7 @@ test('renders the app heading', async () => {
   vi.spyOn(client, 'listActivities').mockResolvedValue([])
   render(<App />)
   expect(
-    screen.getByRole('heading', { name: /kindo school payments/i }),
+    screen.getByRole('heading', { name: /school payments/i }),
   ).toBeInTheDocument()
   await screen.findByText(/no upcoming trips/i)
 })

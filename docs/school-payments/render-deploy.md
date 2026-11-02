@@ -11,7 +11,7 @@ Verified 2026-10-25 against render.com/docs. Do the steps in order. Where the do
 ## 1. Database
 
 1. Click **+ New** > **Postgres** (or open dashboard.render.com/new/database).
-2. **Name**: `kindo-db`
+2. **Name**: `school-trips-db`
 3. **Database** and **User**: leave blank (optional, cannot be changed later).
 4. **Region**: pick one and note it. The backend must use the same region and the same Render account.
 5. **PostgreSQL Version**: `14` (matches the dev container).
@@ -24,7 +24,7 @@ Verified 2026-10-25 against render.com/docs. Do the steps in order. Where the do
 
 1. Click **+ New** > **Web Service**. Source: Git Provider. Select your repo and click **Connect**.
 2. Fill in the form:
-   - **Name**: `kindo-api`
+   - **Name**: `school-trips-api`
    - **Language**: Python
    - **Branch**: `main`
    - **Region**: the same region as the database
@@ -49,7 +49,7 @@ Verified 2026-10-25 against render.com/docs. Do the steps in order. Where the do
 
 1. Click **+ New** > **Static Site**. Select the same repo and click **Connect**.
 2. Fill in the form:
-   - **Name**: `kindo-web`
+   - **Name**: `school-trips-web`
    - **Branch**: `main`
    - **Root Directory**: `frontend`, if the form shows this field. If it does not, leave it and see step 5.
    - **Build Command**: `npm install && npm run build`
@@ -83,7 +83,7 @@ Verified 2026-10-25 against render.com/docs. Do the steps in order. Where the do
 ## 7. Finish the docs
 
 1. Add the live URLs to `README.md`.
-2. Tick step 10 in `docs/kindo-payments/impl.md`.
+2. Tick step 10 in `docs/school-payments/impl.md`.
 3. Add `DATABASE_URL`, `FRONTEND_ORIGIN` and `VITE_API_URL` to the `.env.example` files.
 
 ## If you change `VITE_API_URL` later

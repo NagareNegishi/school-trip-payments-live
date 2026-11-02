@@ -49,4 +49,4 @@ marked "gap" are rules the code states but does not fully enforce; lines marked
 ## Gaps
 
 - gap: the add-child request cannot pick a school; the first school is used -> `backend/app/routers/parents.py`
-- gap: there is no login, so any caller can read or pay for any parent's registrations; the dropdown is a demo stand-in -> `docs/kindo-payments/Kindo School Payments – Implementation Plan.md`
+- gap: there is no login, so any caller can read or pay for any parent's registrations; the dropdown is a demo stand-in -> `docs/school-payments/School Payments - Implementation Plan.md`

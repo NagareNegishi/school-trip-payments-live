@@ -7,7 +7,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.models import Activity, Base, Parent, School, Student
 
-SCHOOL_NAME = "Kindo Primary School"
+SCHOOL_NAME = "Riverside Primary School"
 TRIP_TITLE = "Zoo Trip"
 TRIP_LEAD_DAYS = 30
 

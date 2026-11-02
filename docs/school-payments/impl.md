@@ -1,4 +1,4 @@
-# Implementation plan: kindo-payments
+# Implementation plan: school-payments
 
 ## Maturity
 lowest: 🤖 ai-audited
@@ -32,7 +32,7 @@ Backend first, then frontend, then docs and deploy, in the order of the Implemen
 ### Step 1: Set up the environment and repo skeleton
 🤖 ai-audited(sonnet-5.5) · ❔ unverified (not checked)
 
-- [x] Set `POSTGRES_DB=kindo` in `.devcontainer/.env`.
+- [x] Set `POSTGRES_DB=school_trips` in `.devcontainer/.env`.
 - [x] Add `.devcontainer/.env` to `.gitignore`.
 - [x] Remove `version` from `docker-compose.yml`.
 - [x] Rebuild the dev container; check Postgres is reachable through `DATABASE_URL`, `uv` runs, and PyPI and npm installs work (if rejected, rerun `sudo /usr/local/bin/project-firewall.sh`).

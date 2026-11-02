@@ -13,7 +13,7 @@ from sqlalchemy.pool import NullPool
 from app.config import settings
 
 ALEMBIC_INI = Path(__file__).resolve().parents[1] / "alembic.ini"
-SCRATCH_DB = "kindo_migration_test"
+SCRATCH_DB = "school_trips_migration_test"
 TABLES = {"school", "parent", "student", "activity", "registration", "payment_attempt"}
 
 

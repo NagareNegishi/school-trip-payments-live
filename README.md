@@ -1,4 +1,4 @@
-# Kindo School Payments
+# School Payments
 
 A parent registers a child for a school field trip and pays for it online. The backend is FastAPI on PostgreSQL, the frontend is React with Tailwind, and card payments go to a mock legacy processor through an adapter.
 
@@ -6,11 +6,11 @@ How AI was used to build this, including where it went wrong: [AI_WORKINGS.md](A
 
 ## Live demo
 
-Deployed on Render (free plan): https://kindo-school-payments-frontend.onrender.com/
+Deployed on Render (free plan): link to be added after the move to the new deployment.
 
-The backend sleeps after 15 minutes idle and takes about a minute to wake. Open https://kindo-school-payments-backend.onrender.com/parents first and wait for it to return the parents, then use the site.
+The backend sleeps after 15 minutes idle and takes about a minute to wake. Open `<backend URL>/parents` first and wait for it to return the parents, then use the site.
 
-To reset the data, open https://kindo-school-payments-backend.onrender.com/docs, expand `POST /demo/reset`, click **Try it out**, then **Execute**.
+To reset the data, open `<backend URL>/docs`, expand `POST /demo/reset`, click **Try it out**, then **Execute**.
 
 ## What it does
 
@@ -30,7 +30,7 @@ No real card is charged, so do not enter real card data.
 
 You need Docker and VS Code with the Dev Containers extension. The container has Python 3.14, uv, Node, and a Postgres 14.3 service. Ports 8000, 5173 and 5432 are forwarded.
 
-1. Create `.devcontainer/.env` (gitignored) with `POSTGRES_USER`, `POSTGRES_PASSWORD` and `POSTGRES_DB=kindo`. The container builds `DATABASE_URL` from them.
+1. Create `.devcontainer/.env` (gitignored) with `POSTGRES_USER`, `POSTGRES_PASSWORD` and `POSTGRES_DB=school_trips`. The container builds `DATABASE_URL` from them.
 2. Open the folder in VS Code and choose "Reopen in Container".
 3. Start the backend. On start it runs the migrations and the seed.
 
@@ -130,7 +130,7 @@ Every error has the same shape: `{ "code", "message", "field" }`. Each one is al
 
 - No login. Anyone can pick any parent. Each parent sees only their own children.
 - Currency is NZD.
-- One school and one trip, as the brief describes. The code supports several of each.
+- One school and one trip. The code supports several of each.
 - Registering and paying are separate steps. An unpaid registration stays open with no expiry.
 - No cancelling a registration, removing a child, or refunds.
 
@@ -149,5 +149,5 @@ Every error has the same shape: `{ "code", "message", "field" }`. Each one is al
 ## Repository layout
 
 - `backend/`, `frontend/`: the app.
-- `docs/kindo-payments/`: the brief, the implementation plan and the legacy processor source.
+- `docs/school-payments/`: the product plan, the implementation plan and the deploy guide.
 - `docs/progress.md`: where the build stands and the decisions made on the way.

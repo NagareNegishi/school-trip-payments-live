@@ -1,4 +1,4 @@
-# Kindo School Payments - Implementation Plan
+# School Payments - Implementation Plan
 
 ## Scope
 
@@ -38,19 +38,19 @@ Submission:
 
 ## Environment
 
-Dev container via Docker Compose, project name `kindo`.
+Dev container via Docker Compose, project name `school-trips`.
 
 | Part | Setup |
 | --- | --- |
 | App container | Python 3.14 (Debian trixie), uv 0.13.5, Node feature, GitHub CLI, Claude Code |
-| Database | `postgres:14.3`, driver asyncpg, database `kindo` |
+| Database | `postgres:14.3`, driver asyncpg, database `school_trips` |
 | Ports | 8000 backend, 5173 frontend, 5432 Postgres |
 | Firewall | Outbound allowlist: GitHub, npm, PyPI, `api.anthropic.com`, `ui.shadcn.com`, VS Code marketplace |
 | Timezone | Pacific/Auckland |
 
 Fixes before building:
 
-- [ ] Set `POSTGRES_DB=kindo` in `.devcontainer/.env` so Postgres creates the `kindo` database.
+- [ ] Set `POSTGRES_DB=school_trips` in `.devcontainer/.env` so Postgres creates the `school_trips` database.
 - [ ] Add `.devcontainer/.env` to `.gitignore`.
 - [ ] Remove `version: '3.8'` from `docker-compose.yml`.
 
@@ -82,7 +82,7 @@ Rules:
 
 ## Legacy payment API
 
-Include `LegacyPaymentProcessor` from the brief unchanged, in its own module. Call it only through an adapter.
+Include `LegacyPaymentProcessor` unchanged, in its own module. Call it only through an adapter.
 
 | Field | Type sent | Source |
 | --- | --- | --- |

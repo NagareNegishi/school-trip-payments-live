@@ -2,18 +2,18 @@
 
 checked: 2026-10-26
 
-Purpose and audience. Claims here may lag; verify against `docs/kindo-payments/product.md`
+Purpose and audience. Claims here may lag; verify against `docs/school-payments/product.md`
 and `docs/progress.md`. The citation is authoritative.
 
-## What Kindo School Payments is
+## What School Payments is
 
-- A web app where a parent registers a child for a school trip, pays by card through an online form and gets a receipt -> `docs/kindo-payments/product.md`
+- A web app where a parent registers a child for a school trip, pays by card through an online form and gets a receipt -> `docs/school-payments/product.md`
 - Payments go to a mock legacy processor behind an adapter; no real card is charged -> `backend/app/legacy/adapter.py`
 
 ## Who it serves
 
 - Parents of school children; the demo stands in for login with three seeded parents picked from a header dropdown -> `backend/app/seed.py`, `frontend/src/components/ParentSelect.tsx`
-- Not served: school staff, admins, anyone who needs real login -> `docs/kindo-payments/product.md`
+- Not served: school staff, admins, anyone who needs real login -> `docs/school-payments/product.md`
 
 ## What "done well" means
 
@@ -27,6 +27,6 @@ and `docs/progress.md`. The citation is authoritative.
 
 Deliberate non-goals (the "why" is in the plan docs, not here):
 
-- No login -> `docs/kindo-payments/product.md`
-- No expiry of unpaid registrations -> `docs/kindo-payments/product.md`
-- No cancellation or refunds -> `docs/kindo-payments/product.md`
+- No login -> `docs/school-payments/product.md`
+- No expiry of unpaid registrations -> `docs/school-payments/product.md`
+- No cancellation or refunds -> `docs/school-payments/product.md`
