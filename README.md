@@ -20,8 +20,7 @@ https://school-trips-web.onrender.com (Render free plan)
 4. About 1 payment in 10 is declined at random by the mock processor. Click Retry on the same form.
 5. A successful payment shows a receipt.
 
-**Reset the data:** the Zoo Trip is dated 30 days after the first start and never changes, so once it passes the page shows no trips. To go back to the seed, open https://school-trips-api.onrender.com/docs, expand `POST /demo/reset`, click **Try it out**, then **Execute**. It returns 404 when the reset is switched off.
-
+**Reset the data:** the Zoo Trip is dated 30 days after the first start and never changes, so once it passes the page shows no trips. To go back to the seed, open https://school-trips-api.onrender.com/docs, expand `POST /demo/reset`, click **Try it out**, then **Execute**.
 ## What it does
 
 1. The parent picks themselves from a dropdown in the header.
@@ -137,7 +136,7 @@ On start the backend adds, only if missing: one school, one trip ("Zoo Trip", $4
 
 ### Reset locally
 
-The reset endpoint is off by default, so enable it first. It has no authentication, so with the flag on, anyone who can reach the backend can wipe the data.
+The reset is on in the live demo but off by default when you run the app yourself, and `POST /demo/reset` returns 404 until you enable it. It has no authentication, so with the flag on, anyone who can reach the backend can wipe the data.
 
 1. Start the backend with the flag set:
 
