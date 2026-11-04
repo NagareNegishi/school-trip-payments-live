@@ -29,13 +29,6 @@ Parent flow:
 | Nice | Receipt |
 | Bonus | Deployed to a free host |
 
-Submission:
-
-- GitHub repo with regular commits.
-- README: setup, solution overview, assumptions and design decisions, link to `AI_WORKINGS.md`.
-- `AI_WORKINGS.md`: tools used and for what; key prompts and agent config files (`CLAUDE.md`) committed; at least one case where the AI went wrong, how it was noticed, what was done; what was written, rewritten or rejected by hand and why.
-- Laptop ready to run the app and walk through code at the demo.
-
 ## Environment
 
 Dev container via Docker Compose, project name `school-trips`.
