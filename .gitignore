@@ -35,3 +35,6 @@ build-orchestration/route-block-count
 # Bash-agent isolation worktrees (agent-worktree.sh); throwaway
 .agent-worktrees/
 /memory/
+
+# Publish plan - local checklist for the move to the new repo and deploy
+rapid-prototypes-plan.md

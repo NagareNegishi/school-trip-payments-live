@@ -8,15 +8,23 @@ How AI was used to build this, including where it went wrong: [AI_WORKINGS.md](A
 
 ## Live demo
 
-Deployed on Render (free plan): link to be added after the move to the new deployment.
+https://school-trips-web.onrender.com (Render free plan)
 
-The backend sleeps after 15 minutes idle and takes about a minute to wake. Open `<backend URL>/parents` first and wait for it to return the parents, then use the site.
+**Wake the backend first.** It sleeps after 15 minutes idle and takes about a minute to wake. Open https://school-trips-api.onrender.com/parents and wait for it to return the parents, then use the site.
 
-To reset the data, open `<backend URL>/docs`, expand `POST /demo/reset`, click **Try it out**, then **Execute**.
+**Try it:**
+
+1. Pick a parent in the header dropdown. There is no login, so the dropdown stands in for one.
+2. Click "Register a child" on the trip and pick a child, or add a new one.
+3. Pay. No real card is charged, so do not enter real card data.
+4. About 1 payment in 10 is declined at random by the mock processor. Click Retry on the same form.
+5. A successful payment shows a receipt.
+
+**Reset the data:** the Zoo Trip is dated 30 days after the first start and never changes, so once it passes the page shows no trips. To go back to the seed, open https://school-trips-api.onrender.com/docs, expand `POST /demo/reset`, click **Try it out**, then **Execute**. It returns 404 when the reset is switched off.
 
 ## What it does
 
-1. The parent picks themselves from a dropdown in the header. There is no login, so the dropdown stands in for one.
+1. The parent picks themselves from a dropdown in the header.
 2. The page lists upcoming trips (title, date, location, cost, description). Above the list are that parent's unpaid registrations, past trips included, each with a Pay button.
 3. "Register a child" on a trip lets the parent pick one of their children or add a new one. Children already registered for that trip are marked and cannot be picked.
 4. The payment form takes card number, expiry and CVV. The amount is shown and cannot be edited. Each field is checked on blur and on submit.
@@ -25,77 +33,6 @@ To reset the data, open `<backend URL>/docs`, expand `POST /demo/reset`, click *
    - A network or server error shows a banner with Retry and keeps what was typed.
    - An error the backend ties to a field appears on that field.
 6. A successful payment shows a receipt: transaction ID, amount, date, child, trip and the last four card digits.
-
-No real card is charged, so do not enter real card data.
-
-## Setup
-
-You need Docker and VS Code with the Dev Containers extension. The container has Python 3.14, uv, Node, and a Postgres 14.3 service. Ports 8000, 5173 and 5432 are forwarded.
-
-1. Create `.devcontainer/.env` (gitignored) with `POSTGRES_USER`, `POSTGRES_PASSWORD` and `POSTGRES_DB=school_trips`. The container builds `DATABASE_URL` from them.
-2. Open the folder in VS Code and choose "Reopen in Container".
-3. Start the backend. On start it runs the migrations and the seed.
-
-   ```bash
-   cd backend
-   uv sync
-   uv run fastapi dev        # http://localhost:8000
-   ```
-
-4. Start the frontend in a second terminal.
-
-   ```bash
-   cd frontend
-   npm install
-   npm run dev               # http://localhost:5173
-   ```
-
-5. Open http://localhost:5173 and pick a parent.
-
-### Tests and checks
-
-```bash
-cd backend
-uv run pytest
-uv run ruff check . && uv run ruff format --check .
-
-cd frontend
-npm test
-npm run lint && npx prettier --check .
-npm run build
-```
-
-### Configuration
-
-| Variable | Used by | Default |
-| --- | --- | --- |
-| `DATABASE_URL` | backend | none; the backend will not start without it. A plain `postgresql://` URL is converted to the asyncpg form. |
-| `FRONTEND_ORIGIN` | backend (CORS) | `http://localhost:5173` |
-| `VITE_API_URL` | frontend, read at build time | `http://localhost:8000` |
-| `DEMO_RESET_ENABLED` | backend; turns on `POST /demo/reset` | off |
-
-### Seed data
-
-On start the backend adds, only if missing: one school, one trip ("Zoo Trip", $45.00, Auckland Zoo, dated 30 days after the first start), and three parents. Aroha Smith has two children (Mia, Liam), Tom Wilson has one (Ella), and Priya Patel has none.
-
-### Reset the demo data
-
-To go back to the seed (no registrations, payments or added children), call the reset endpoint. It is off by default, so enable it for local use first.
-
-1. Start the backend with the flag set:
-
-   ```bash
-   cd backend
-   DEMO_RESET_ENABLED=true uv run fastapi dev
-   ```
-
-2. Call the endpoint. It returns 204 and the app is back to the seed.
-
-   ```bash
-   curl -X POST http://localhost:8000/demo/reset
-   ```
-
-Without the flag the endpoint returns 404. The endpoint has no authentication, so with the flag on, anyone who can reach the backend can wipe the data.
 
 ## How it is built
 
@@ -147,6 +84,73 @@ Every error has the same shape: `{ "code", "message", "field" }`. Each one is al
 
 - The Zoo Trip is dated 30 days after the database is first set up, and the date never changes after that. Once it passes, the page shows no trips. Resetting the demo data creates the trip again with a new date.
 - If two payments for the same registration arrive together, the second gets "payment in progress" (409) even if the first has already finished. Nobody is charged twice.
+
+## Run it locally
+
+You need Docker and VS Code with the Dev Containers extension. The container has Python 3.14, uv, Node, and a Postgres 14.3 service. Ports 8000, 5173 and 5432 are forwarded.
+
+1. Create `.devcontainer/.env` (gitignored) with `POSTGRES_USER`, `POSTGRES_PASSWORD` and `POSTGRES_DB=school_trips`. The container builds `DATABASE_URL` from them.
+2. Open the folder in VS Code and choose "Reopen in Container".
+3. Start the backend. On start it runs the migrations and the seed.
+
+   ```bash
+   cd backend
+   uv sync
+   uv run fastapi dev        # http://localhost:8000
+   ```
+
+4. Start the frontend in a second terminal.
+
+   ```bash
+   cd frontend
+   npm install
+   npm run dev               # http://localhost:5173
+   ```
+
+5. Open http://localhost:5173 and pick a parent.
+
+### Tests and checks
+
+```bash
+cd backend
+uv run pytest
+uv run ruff check . && uv run ruff format --check .
+
+cd frontend
+npm test
+npm run lint && npx prettier --check .
+npm run build
+```
+
+### Configuration
+
+| Variable | Used by | Default |
+| --- | --- | --- |
+| `DATABASE_URL` | backend | none; the backend will not start without it. A plain `postgresql://` URL is converted to the asyncpg form. |
+| `FRONTEND_ORIGIN` | backend (CORS) | `http://localhost:5173` |
+| `VITE_API_URL` | frontend, read at build time | `http://localhost:8000` |
+| `DEMO_RESET_ENABLED` | backend; turns on `POST /demo/reset` | off |
+
+### Seed data
+
+On start the backend adds, only if missing: one school, one trip ("Zoo Trip", $45.00, Auckland Zoo, dated 30 days after the first start), and three parents. Aroha Smith has two children (Mia, Liam), Tom Wilson has one (Ella), and Priya Patel has none.
+
+### Reset locally
+
+The reset endpoint is off by default, so enable it first. It has no authentication, so with the flag on, anyone who can reach the backend can wipe the data.
+
+1. Start the backend with the flag set:
+
+   ```bash
+   cd backend
+   DEMO_RESET_ENABLED=true uv run fastapi dev
+   ```
+
+2. Call the endpoint. It returns 204 and the app is back to the seed.
+
+   ```bash
+   curl -X POST http://localhost:8000/demo/reset
+   ```
 
 ## Repository layout
 
