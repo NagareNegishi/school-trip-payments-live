@@ -51,7 +51,7 @@ Parents of school children. The demo uses three seeded parents chosen from a hea
 - The system shall store only `card_last4`, never the full card number, expiry or CVV, and shall not log them.
 - The system shall be usable on mobile and desktop for every component.
 - Tests shall ship in the same commit as the code they cover; no layout or visual tests.
-- The repo shall include a README (setup, solution overview, assumptions and design decisions, link to `AI_WORKINGS.md`) and `AI_WORKINGS.md`.
+- The repo shall include a README (setup, solution overview, assumptions and design decisions).
 
 ## stack
 👤 human-ok

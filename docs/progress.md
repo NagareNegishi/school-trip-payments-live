@@ -12,6 +12,6 @@ School payments: FastAPI + React + Postgres app where a parent registers a child
 - `POST /registrations/{id}/payments` and `GET /payments/{id}` both return the receipt data (`ReceiptOut`); `GET` returns 404 unless the payment succeeded.
 - Endpoint tests run inside a rolled-back outer transaction (`tests/conftest.py`), so the dev database stays untouched.
 
-## In Progress — pick up next session
+## Status
 
-- Open items are in `rapid-prototypes-plan.md`
+Finished. This repo is a copy of the 4-hour build and gets no further features.

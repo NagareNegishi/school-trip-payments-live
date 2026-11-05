@@ -22,7 +22,7 @@ lowest: 🤖 ai-audited
 ## Overview
 🤖 ai-audited(sonnet-5.5) · ❔ unverified (not checked)
 
-Backend first, then frontend, then docs and deploy, in the order of the Implementation Plan's build order. Each step ships its code and its tests together, and is committed once it works. Before a step is done, tests, ruff (backend) and ESLint plus Prettier (frontend) pass. The legacy processor is called only through an adapter. While building, keep notes for `AI_WORKINGS.md`: key prompts, each case where output was wrong with how it was caught and the fix, and code written or rewritten by hand and why. The Implementation Plan holds the detail for every step.
+Backend first, then frontend, then docs and deploy, in the order of the Implementation Plan's build order. Each step ships its code and its tests together, and is committed once it works. Before a step is done, tests, ruff (backend) and ESLint plus Prettier (frontend) pass. The legacy processor is called only through an adapter. The Implementation Plan holds the detail for every step.
 
 ## Risks & unknowns
 🤖 ai-audited(sonnet-5.5) · ❔ unverified (not checked)
@@ -40,7 +40,6 @@ Backend first, then frontend, then docs and deploy, in the order of the Implemen
 - [x] Initialise Alembic with no migrations.
 - [x] Create `frontend/` with Vite, React, Tailwind, ESLint, Prettier and Vitest; an empty test run passes.
 - [x] Add `.env.example` files for backend and frontend listing every variable.
-- [x] Add an empty `AI_WORKINGS.md`.
 
 ### Step 2: Add config, models, migration and seed
 🤖 ai-audited(sonnet-5.5) · ❔ unverified (net-new)
@@ -111,14 +110,10 @@ Backend first, then frontend, then docs and deploy, in the order of the Implemen
 - [x] Receipt: transaction ID, amount, date, child, trip, card last 4.
 - [x] Tests: submit disabled while pending; error mapped to the right field or banner.
 
-### Step 9: Final pass on README and AI_WORKINGS
+### Step 9: Final pass on README
 🤖 ai-audited(sonnet-5.5) · ❔ unverified (net-new)
 
 - [x] README: setup, solution overview, assumptions (no login, NZD, mock processor) and design decisions.
-- [x] README: link to `AI_WORKINGS.md`.
-- [x] `AI_WORKINGS.md`: tools used and for what, key prompts, `CLAUDE.md` committed.
-- [x] `AI_WORKINGS.md`: at least one AI mistake with how it was noticed and the fix, and what was written, rewritten or rejected by hand and why.
-- [x] Laptop ready to run the app and walk through the code at the demo.
 
 The browser check (`docs/plans/manual-check.md`) is left to the user, outside this step.
 

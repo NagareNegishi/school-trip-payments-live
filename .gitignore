@@ -16,19 +16,6 @@ docs/session/baton.md
 # skills write here; drafts are ephemeral working files, never committed
 .github/drafts/
 
-# Subagent prompt captures + deferred analysis from build-orchestration
-# sessions — local data, never committed; the README and the capture template
-# stay tracked to hold the rules and the copyable shape
-build-orchestration/prompt-log/*
-!build-orchestration/prompt-log/README.md
-!build-orchestration/prompt-log/_template.md
-
-# Escalation strike count — live scratch
-build-orchestration/strike-count.md
-
-# SubagentStop route-guard loop-guard — live scratch
-build-orchestration/route-block-count
-
 # Per-subagent path-jail scope root (agent-scope-jail.sh); throwaway staging + log
 .agent-scope/
 

@@ -19,6 +19,7 @@ https://school-trips-web.onrender.com (Render free plan, Neon database)
 5. A successful payment shows a receipt.
 
 **Reset the data:** the Zoo Trip is dated 30 days after the first start and never changes, so once it passes the page shows no trips. To go back to the seed, open https://school-trips-api.onrender.com/docs, expand `POST /demo/reset`, click **Try it out**, then **Execute**.
+
 ## What it does
 
 1. The parent picks themselves from a dropdown in the header.
@@ -154,3 +155,4 @@ The reset is on in the live demo but off by default when you run the app yoursel
 - `backend/`, `frontend/`: the app.
 - `docs/school-payments/`: the product plan, the implementation plan and the deploy guide.
 - `docs/progress.md`: where the build stands and the decisions made on the way.
+- `CLAUDE.md`, `.claude/`, `context/` and `CONTEXT.md`: the instructions and orientation files used for the AI-assisted build.

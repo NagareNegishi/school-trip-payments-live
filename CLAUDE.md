@@ -1,12 +1,9 @@
-**Skill work**: before polishing or adding a skill in `.claude/skills/`, read
-`docs/skills/new-skills.md` (authoring and polish guide).
-
 **Config work**: changes to `.claude/settings.json` (permissions, hooks) must cite
 the relevant code.claude.com docs and get user sign-off before writing.
 
 **Attribution**: never add Claude as author, co-author (`Co-Authored-By`), or
 contributor in anything that goes to git — commits, merges, tags, PRs. Enforced
-by a PreToolUse hook; policy: `docs/permissions/v3-no-coauthor.md`.
+by a PreToolUse hook (`.claude/hooks/coauthor-guard.sh`).
 
 **Session notes** (`docs/notes.md`, gitignored) — before adding a line:
 1. Bar: only a reusable directive not already in CLAUDE.md, a skill, or the code.
@@ -14,7 +11,7 @@ by a PreToolUse hook; policy: `docs/permissions/v3-no-coauthor.md`.
 3. Shape: matching section, one line, directive voice.
 4. Sync: new section → add its index line in `memory/MEMORY.md`; emptied → remove it.
 
-Promote to CLAUDE.md or a skill only with user review. Mechanism: `docs/notes-system.md`.
+Promote to CLAUDE.md or a skill only with user review.
 
 **Doc voice**:
 - Planning or exploring options: keep intention and reasoning.
@@ -34,8 +31,8 @@ Promote to CLAUDE.md or a skill only with user review. Mechanism: `docs/notes-sy
 
 School payments: a parent picks a seeded demo parent, views an upcoming school
 trip, registers a child, pays through an online form, and gets a receipt. Payments go
-to a mock legacy processor (`LegacyPaymentProcessor`) behind an adapter. Take-home
-challenge, 2-4 hour budget; the plan is `docs/school-payments/`.
+to a mock legacy processor (`LegacyPaymentProcessor`) behind an adapter. Built in
+a 4-hour budget; the plan is `docs/school-payments/`.
 
 - **Backend**: Python 3.14 + FastAPI (`backend/`), managed with uv
 - **Frontend**: React + Vite + Tailwind (`frontend/`)
@@ -54,17 +51,8 @@ The dev environment runs in a Dev Container (`.devcontainer/`).
   `CONTEXT.md` for the convention and which file to read per task.
 - `docs/progress.md` — read at session start; update after each major feature completes.
 - `docs/plans/` — per-feature product plan/decision files; read only the relevant file when working on a feature.
-- `docs/skills/` — plan/decision docs for the `.claude/skills/` tooling itself (authoring guide + per-skill decision logs). Kept out of `docs/plans/` so product plans don't mix with tooling meta-docs.
-
-## Reusables
-
-`reusables/` holds portable React/TypeScript pieces to copy into projects:
-`component/` (app components), `shadcn/` (shadcn/ui primitives), `util/` (helpers
-and hooks). Check here before writing a new component or util; not part of any build.
 
 ## Commands
-
-Planned; `backend/` and `frontend/` are not scaffolded yet. Update on scaffold.
 
 ### Backend (from `backend/`)
 

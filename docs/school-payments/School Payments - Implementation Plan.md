@@ -24,7 +24,6 @@ Parent flow:
 | Must | Unit tests for logic, written with each feature (no layout tests) |
 | Must | Every component responsive on mobile and desktop |
 | Must | Transaction records stored |
-| Must | `AI_WORKINGS.md` |
 | Nice | Loading state during payment |
 | Nice | Receipt |
 | Bonus | Deployed to a free host |
@@ -193,12 +192,6 @@ Goes into `CLAUDE.md` at the repo root.
 - Write tests with the code they cover, in the same commit. Run tests, ruff (backend) and ESLint + Prettier (frontend) before declaring a task done.
 - Ask when a requirement is unclear instead of guessing.
 
-Logging for `AI_WORKINGS.md`, kept while building:
-
-- Key prompts.
-- Each case where output was wrong, how it was caught, the fix.
-- Code written or rewritten by hand, and why.
-
 ## Deployment
 
 Render free tier, auto-deployed from GitHub on push to `main`.
@@ -228,7 +221,7 @@ Config:
 
 Each step ships its code and its tests together.
 
-- [ ] Environment fixes; repo skeleton with ruff, ESLint and Prettier; `CLAUDE.md`; empty `AI_WORKINGS.md`
+- [ ] Environment fixes; repo skeleton with ruff, ESLint and Prettier; `CLAUDE.md`
 - [ ] Backend: models, Alembic migration, seed data
 - [ ] Backend: legacy processor + adapter, with adapter tests
 - [ ] Backend: validation schemas, with validation tests
@@ -236,7 +229,7 @@ Each step ships its code and its tests together.
 - [ ] Frontend: Vite + Tailwind setup, trip card
 - [ ] Frontend: parent dropdown, child picker and add-child form, payment form, with validation tests
 - [ ] Frontend: loading, error banners, retry, receipt, with submit tests
-- [ ] README and `AI_WORKINGS.md` final pass
+- [ ] README final pass
 - [ ] Deploy to Render
 
 ## Assumptions and scope

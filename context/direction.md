@@ -7,15 +7,10 @@ durable part. Verify status against `docs/progress.md`, `docs/plans/`, and issue
 
 ## Heading toward
 
-Near-term, roughly in queue order:
-
-- Browser check of the running app, run by the user -> `docs/plans/manual-check.md`
-- Merge `feat/school-trip-payments` to `main` -> `docs/school-payments/impl.md`
-- Deploy to Render by hand from the dashboard, then add the live URLs to the README -> `docs/school-payments/render-deploy.md`
+Nothing. This repo is a copy of the 4-hour build and gets no further features. The browser check and the Render deploy are done -> `docs/plans/manual-check.md`, `docs/school-payments/impl.md`
 
 ## Deferred but real
 
-- Render setup: not done; the repo side of Step 10 is closed -> `docs/school-payments/impl.md`
 - A seeded trip date is set once, 30 days after the first start; a database kept longer has no upcoming trip -> `README.md`
 - No reconciliation if the processor approves and the database commit then fails -> `README.md`
 
@@ -38,4 +33,4 @@ Near-term, roughly in queue order:
 
 ## Notes for a reader
 
-- `README.md` is the current description of the app; `CLAUDE.md` "Commands" still says the backend and frontend are not scaffolded and is out of date -> `CLAUDE.md`
+- `README.md` is the current description of the app -> `README.md`

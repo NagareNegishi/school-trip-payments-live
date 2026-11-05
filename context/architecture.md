@@ -5,7 +5,7 @@ checked: 2026-10-26
 The parts and the seams between them. Every line ends in a citation; the citation is
 the truth, the line is a hint. Verify before relying.
 
-CLAUDE.md "Architecture" is the prose companion but lags the code -> CLAUDE.md
+CLAUDE.md "Architecture" is the prose companion; the code wins on any difference -> CLAUDE.md
 "Architecture", `backend/app/main.py`
 
 ## Parts
@@ -66,11 +66,10 @@ Each interface between parts and to the outside.
 ## Infra
 
 - Dev container with Postgres as a second service and an outbound firewall -> `.devcontainer/`
-- Deploy target is Render, set up by hand from the dashboard; not done yet -> `docs/school-payments/render-deploy.md`
+- Deployed on Render (backend and static site) with a Neon database, set up by hand from the dashboard -> `docs/school-payments/render-deploy.md`
 
 ## Weak or missing seams
 
 - A new child is attached to the first school, because the add-child request has no school field and the first round has one school -> `backend/app/routers/parents.py`
 - The payment flow checks for a live attempt, then inserts; a race between two requests is caught only by the unique index -> `backend/app/services/payment.py`, `backend/app/models/payment_attempt.py`
-- The browser check has not been run, so no cross-origin call has been exercised outside tests and API-level runs -> `docs/plans/manual-check.md`
 - Frontend response types are written by hand and can drift from the backend schemas -> `frontend/src/api/client.ts`, `backend/app/schemas/`
