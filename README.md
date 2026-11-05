@@ -4,8 +4,6 @@ A parent registers a child for a school field trip and pays for it online. The b
 
 > This repo is a copy of [NagareNegishi/kindo-school-payments](https://github.com/NagareNegishi/kindo-school-payments), a timed build: planning, design, code and tests all came in under 4 hours. The full commit history is kept, so the timestamps show it. Since the deadline the only changes are cleanup (assessment-specific text and unused files removed) and hosting.
 
-How AI was used to build this, including where it went wrong: [AI_WORKINGS.md](AI_WORKINGS.md).
-
 ## Live demo
 
 https://school-trips-web.onrender.com (Render free plan, Neon database)

@@ -139,8 +139,6 @@ From the implementation plan.
 - Never log or store the full card number, expiry, or CVV. Store `card_last4` only.
 - Write tests with the code they cover, in the same commit. Run tests, ruff (backend),
   and ESLint + Prettier (frontend) before declaring a task done.
-- Keep notes for `AI_WORKINGS.md` as you build: key prompts, each case where output was
-  wrong (how caught, the fix), and code written or rewritten by hand and why.
 
 ## Non-negotiable rules
 

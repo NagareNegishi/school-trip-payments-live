@@ -746,7 +746,6 @@ scripts/
 ## root files
 
 ```
-AI_WORKINGS.md  the user's account of how AI was used: prompts, wrong outputs and fixes, hand-written code; owned by the user
 .editorconfig  charset, LF line endings, final newline and trailing-whitespace trim for all files except Markdown; no indent rules, stack-specific sections are added per project
 .gitignore     ignores local env files, session notes and the baton, issue/PR drafts, build-orchestration prompt-log data and scratch counters, and the per-subagent scope/worktree dirs
 CLAUDE.md      project instructions: skill/config/attribution/notes rules, doc voice, project overview, docs index, commands, configuration, architecture, project rules, non-negotiable rules, response style
