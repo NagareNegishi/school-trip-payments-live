@@ -125,11 +125,9 @@ The browser check (`docs/plans/manual-check.md`) is left to the user, outside th
 ### Step 10: Deploy to Render
 🤖 ai-audited(sonnet-5.5) · ❔ unverified (net-new)
 
-- [ ] Free Postgres, free web service for the backend, static site for the frontend, auto-deployed from GitHub on push to `main`.
-- [ ] Set `VITE_API_URL` and the CORS origin; use `.env.example` for the Render variables.
-- [ ] Add the live URL to the README.
-- [ ] Open the backend URL before the demo to wake it; the free Postgres expires 30 days after creation.
+- [x] Neon free Postgres, free Render web service for the backend, Render static site for the frontend, auto-deployed from GitHub on push to `main`.
+- [x] Set `VITE_API_URL` and the CORS origin.
+- [x] Add the live URL to the README.
+- [x] Wake note for the sleeping backend in the README.
 
-Ready in the repo (checked in code): `backend/.python-version` pins 3.14, `backend/uv.lock` and `frontend/package-lock.json` are committed, `config.py` converts both `postgresql://` and `postgres://` to the asyncpg form and reads `FRONTEND_ORIGIN`, migrations and the seed run on start, `frontend` reads `VITE_API_URL` at build time.
-
-Closed on the repo side. The user does the Render setup later in the dashboard by following `render-deploy.md` (verified; no `render.yaml` needed), outside this step. Merge `feat/school-trip-payments` to `main` first, since auto-deploy follows `main`. After the deploy: add the live URLs to the README and add `DATABASE_URL`, `FRONTEND_ORIGIN` and `VITE_API_URL` to the `.env.example` files if missing.
+Live at https://school-trips-web.onrender.com. Steps are in `render-deploy.md`; no `render.yaml` is needed.

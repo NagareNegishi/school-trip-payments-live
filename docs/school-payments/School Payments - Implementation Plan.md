@@ -207,12 +207,11 @@ Render free tier, auto-deployed from GitHub on push to `main`.
 | --- | --- |
 | Frontend | Static site |
 | Backend | Free web service |
-| Database | Free Render Postgres |
+| Database | Neon free Postgres (not on Render) |
 
 Free tier limits ([Render docs](https://render.com/docs/free)):
 
 - Web service spins down after 15 minutes without traffic. The next request waits for a cold start.
-- Free Postgres expires 30 days after creation, then a 14-day grace period before deletion. No backups.
 - 750 free instance hours per workspace per month.
 
 Open the backend URL before the demo to wake it.
@@ -221,7 +220,7 @@ Config:
 
 - Frontend reads the backend URL from `VITE_API_URL` at build time.
 - Backend allows the frontend origin in CORS (Cross-Origin Resource Sharing: the browser rule that lets one site call another's API).
-- Render provides a `postgresql://` URL; `config.py` converts it to `postgresql+asyncpg://` for SQLAlchemy async.
+- Neon provides a `postgresql://` URL; `config.py` converts it to `postgresql+asyncpg://` for SQLAlchemy async. In Render's `DATABASE_URL`, remove `channel_binding=require` and use `ssl=require` instead of `sslmode=require` (see `render-deploy.md`).
 - Migrations and idempotent seed run on backend start.
 - `.env.example` lists every variable, used by the README setup and Render.
 

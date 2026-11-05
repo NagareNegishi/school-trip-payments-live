@@ -92,6 +92,7 @@ backend/
 │   ├── routers/
 │   │   ├── __init__.py       empty package marker
 │   │   ├── activities.py     activity list (upcoming only) and detail endpoints
+│   │   ├── demo.py           demo reset endpoint that puts the data back to the seed, 404 unless enabled in settings
 │   │   ├── parents.py        parent list, and each parent's children and registrations, plus adding a child
 │   │   ├── payments.py       receipt endpoint for one payment attempt
 │   │   └── registrations.py  registering a child for a trip, and paying for a registration
@@ -110,8 +111,9 @@ backend/
 │   ├── config.py    settings read from the environment, with the Postgres URL converted to the asyncpg form
 │   ├── db.py        async database engine and the per-request session
 │   ├── errors.py    the one error shape and the handlers that log every error
+│   ├── logging_config.py  sends application logs at INFO and above to stdout
 │   ├── main.py      the FastAPI app: runs migrations and the seed on start, registers routers, error handlers and CORS
-│   └── seed.py      idempotent demo data: one school, one trip, three parents with two, one and no children
+│   └── seed.py      idempotent demo data: one school, one trip, three parents with two, one and no children; also the reset back to that seed
 ├── migrations/
 │   ├── versions/
 │   │   └── 75b32f5f5945_create_schema.py  the one migration: all six tables and the payment attempt index
@@ -128,7 +130,7 @@ backend/
 │   ├── test_read_endpoints.py         activity and parent reads, with past trips hidden from the list
 │   ├── test_registration_endpoints.py registering a child, duplicate and past-trip rejection, a parent's registration list
 │   ├── test_schemas.py                each validation rule rejects bad input with the right field
-│   ├── test_seed.py                   running the seed twice adds no duplicate rows
+│   ├── test_seed.py                   the demo seed creates the right data and adds no duplicates on a rerun
 │   ├── test_smoke.py                  the app package imports
 │   ├── test_startup.py                start-up migrates and seeds the database
 │   └── test_student_endpoints.py      a parent sees only their own children, and adding a child
@@ -437,7 +439,7 @@ docs/
 │   ├── School Payments - Implementation Plan.md  the source of truth for scope, data model, API, validation, tests and build order
 │   ├── impl.md                                   the step-by-step build plan with a status table, one section per step
 │   ├── product.md                                the product plan: what the app does and why
-│   ├── render-deploy.md                          verified dashboard steps for deploying to Render, with open gaps
+│   ├── render-deploy.md                          dashboard steps for deploying the backend and frontend to Render with a Neon database
 │   └── school_payments_eer_diagram.svg           data model diagram
 ├── plans/
 │   ├── .gitkeep          keeps docs/plans/ tracked when empty of files

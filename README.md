@@ -8,7 +8,7 @@ How AI was used to build this, including where it went wrong: [AI_WORKINGS.md](A
 
 ## Live demo
 
-https://school-trips-web.onrender.com (Render free plan)
+https://school-trips-web.onrender.com (Render free plan, Neon database)
 
 **Wake the backend first.** It sleeps after 15 minutes idle and takes about a minute to wake. Open https://school-trips-api.onrender.com/parents and wait for it to return the parents, then use the site.
 

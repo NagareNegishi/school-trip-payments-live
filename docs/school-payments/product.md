@@ -62,7 +62,7 @@ Parents of school children. The demo uses three seeded parents chosen from a hea
 - Tests: pytest; Vitest and React Testing Library.
 - Lint: ruff; ESLint and Prettier.
 - Dev container via Docker Compose.
-- Deploy (bonus): Render free tier (static site, web service, Postgres).
+- Deploy: Render free tier (static site, web service) with Neon free Postgres.
 
 ## target device / platform
 👤 human-ok
@@ -78,7 +78,7 @@ Web, responsive: mobile-first with `sm:`/`md:` breakpoints, one page.
 - Money is stored as integer cents; currency NZD.
 - The backend is the authority for validation.
 - No real card data is used.
-- Render free tier: web service spins down after 15 minutes idle, free Postgres expires after 30 days.
+- Render free tier: web service spins down after 15 minutes idle.
 
 ## non-goals
 👤 human-ok
